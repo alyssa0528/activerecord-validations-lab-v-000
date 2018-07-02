@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
   validate :clickbaity?
 
   def clickbaity?
-    binding.pry
+    #binding.pry
     errors.add(:title, "must be clickbait-y") unless title.include?("Won't Believe") || title.include?("Secret") || title.include?("Guess") || title.include?("Top [0-9]")
   end
 end
