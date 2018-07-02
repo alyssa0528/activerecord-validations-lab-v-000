@@ -9,8 +9,8 @@ class Post < ActiveRecord::Base
 
   def clickbaity?
     binding.pry
-    if !title.include?("Won't Believe") || !title.include?("Secret") || !title.include?("Guess") || !title.include?("Top [0-9]")
-      errors.add(:title, "must be clickbait-y")
+    errors.add(:title, "must be clickbait-y") unless title.include?("Won't Believe") || title.include?("Secret") || title.include?("Guess") || title.include?("Top [0-9]")
+
     end
   end
 end
