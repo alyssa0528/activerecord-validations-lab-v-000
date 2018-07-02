@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
 
   def clickbaity?
     #binding.pry
-    if self.title 
+    if self.title
       errors.add(:title, "must be clickbait-y") unless title.include?("Won't Believe") || title.include?("Secret") || title.include?("Guess") || title.include?("Top [0-9]")
     end
   end
